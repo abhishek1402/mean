@@ -2,7 +2,6 @@ import { Component,EventEmitter,Output, ViewChild, ViewContainerRef, ComponentFa
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import {goalComponent} from './goal/goal.component';
-import {messagesComponent} from './messages/messages.Component';
 import {profileComponent} from './personalprofile/profile.component';
 
 
