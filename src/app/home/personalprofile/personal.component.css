@@ -1,0 +1,7 @@
+.nav-tabs>li {
+   
+    background-color: whitesmoke;
+}
+.active>a{
+   color:teal
+}
