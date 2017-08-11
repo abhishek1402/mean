@@ -1,3 +1,5 @@
+import { environment } from './../environments/environment.prod';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +14,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {goalService} from './service/goal.service';
 import {TabsModule} from "ng2-tabs";
 import { ChildComponent } from './child/child.component';
+import { APP_BASE_HREF } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,7 @@ import { ChildComponent } from './child/child.component';
     routes,ReactiveFormsModule,TabsModule
   ],
   
-  providers: [goalService],
+  providers: [goalService,{provide: APP_BASE_HREF, useValue: environment.baseHref }],
   bootstrap: [AppComponent],
  
 })
