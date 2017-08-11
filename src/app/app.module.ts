@@ -7,7 +7,6 @@ import { loginComponent } from './login/login.component';
 import { homeComponent } from './home/home.component';
 import { goalComponent } from './home/goal/goal.component'
 import { AppComponent } from './app.component';
-import {messagesComponent} from './home/messages/messages.Component';
 import {profileComponent} from './home/personalprofile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {goalService} from './service/goal.service';
@@ -16,7 +15,7 @@ import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
-    AppComponent,loginComponent,homeComponent,goalComponent,messagesComponent,profileComponent, ChildComponent
+    AppComponent,loginComponent,homeComponent,goalComponent,profileComponent, ChildComponent
   ],
   imports: [
     BrowserModule,
