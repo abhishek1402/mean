@@ -1,34 +1,20 @@
-import { environment } from './../environments/environment.prod';
-
+import { routes } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {routes} from './app.routing';
-import { HttpModule } from '@angular/http';
-import { loginComponent } from './login/login.component';
-import { homeComponent } from './home/home.component';
-import { goalComponent } from './home/goal/goal.component'
+import {Routes, RouterModule} from '@angular/router';
+
 import { AppComponent } from './app.component';
-import {profileComponent} from './home/personalprofile/profile.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {goalService} from './service/goal.service';
-import {TabsModule} from "ng2-tabs";
-import { ChildComponent } from './child/child.component';
-import { APP_BASE_HREF } from "@angular/common";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent,loginComponent,homeComponent,goalComponent,profileComponent, ChildComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    routes,ReactiveFormsModule,TabsModule
+    BrowserModule,routes
   ],
-  
-  providers: [goalService,{provide: APP_BASE_HREF, useValue: environment.baseHref }],
-  bootstrap: [AppComponent],
- 
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

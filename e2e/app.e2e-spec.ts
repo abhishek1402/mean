@@ -1,14 +1,14 @@
-import { MyAppPage } from './app.po';
+import { DemoCRMPage } from './app.po';
 
-describe('my-app App', () => {
-  let page: MyAppPage;
+describe('demo-crm App', () => {
+  let page: DemoCRMPage;
 
   beforeEach(() => {
-    page = new MyAppPage();
+    page = new DemoCRMPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
 });

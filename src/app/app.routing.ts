@@ -1,25 +1,14 @@
+
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-
+import { LoginComponent } from './login/login.component';
 import {AppComponent} from './app.component';
-import {loginComponent} from './login/login.component';
-import {homeComponent} from './home/home.component';
-import {goalComponent} from './home/goal/goal.component';
-
-import {profileComponent} from './home/personalprofile/profile.component';
-
 
 export const router:Routes = [
-
-    {path:'',redirectTo:'login' ,pathMatch:'full'},
-    
-    { path:'login',component:loginComponent},
-    { path:'home',component:homeComponent,
-    children: [
-      { path: 'goal', component:goalComponent },
-      { path:'profile',component:profileComponent}
-    ]
-    }
+    {path:'',redirectTo:'app' ,pathMatch:'full'},
+    {path:'app',component:AppComponent,},
+    {path:'login',component:LoginComponent,},
+   
 ];
 
 export const routes:ModuleWithProviders = RouterModule.forRoot(router);
