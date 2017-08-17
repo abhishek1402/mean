@@ -1,0 +1,21 @@
+.p-b-10{
+    padding-bottom: 10px
+}
+.m-b-20{
+     margin-bottom: 20px
+}
+.whitBox{
+    padding:25px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 15%
+}
+.box-title{
+    font-size: 16px;
+    font-weight:bold;
+}
+label{
+    font-weight:100
+}
+button{
+    border-radius:10px
+}

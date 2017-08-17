@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+<div class="whitBox col-lg-4">
+  <form class="box" [formGroup]="login" >
+    <span class="col-lg-6 m-b-20 box-title">Singn in to CRM</span>
+    <div class="col-lg-12">
+      <label for="email" >Email</label>
+      <input type="text" id="email" class="form-group form-control" formControlName="email">
+      <div *ngIf="!email.valid && email.touched" class="alert alert-danger" >
+        email is required</div>
+    </div>
+    <div class="col-lg-12">
+      <label for="password">Password</label>
+      <input type="text" id="password" class="form-group form-control" formControlName="password" (blur)="log(login)"> 
+      <div *ngIf="!this.login.get(['password']).valid && this.login.get(['password']).touched" class="alert alert-danger">
+        password is required</div>
+    </div>
+
+    <div class="col-lg-12">
+       <button type="button" class="btn btn-primary col-lg-12">LOG IN</button>
+    </div>
+  </form>
+</div>
