@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Http,Headers} from '@angular/http';
+import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class loginService{
-    constructor(private http:Http){
+    constructor(private http: Http){
         console.log('login intitialized');
     }
     getLogin(){
@@ -13,10 +13,10 @@ export class loginService{
         );
     }
     postLogin(value){
-        var headers = new Headers();
-        headers.append('Content-Type','application/json');
-           console.log( "post");
-        return this.http.post('http://localhost:3000/login',value,{headers:headers})
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+           console.log( 'post');
+        return this.http.post('http://localhost:3000/login', value, {headers: headers})
         .map(res => res.json()
         );
     }
