@@ -16,7 +16,7 @@ app.use(express.static('public'));
 var db ='mongodb://demo:demo@ec2-52-207-64-40.compute-1.amazonaws.com:27017/dummyDB' 
 mongoose.connect(db,function(err){
   if(err){
-    console.log("err");
+    console.log(err);
   }
   else{
     console.log("coonected to db");

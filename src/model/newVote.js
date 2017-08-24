@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var enuma = ['dog'];
 var custom = {
     validator:function(val)
-    {return (val.length>5 && val.length<50)}, message: '{VALUE} is not a valid phone number!'
+    {return (val.length>2 && val.length<50)}, message: '{VALUE} is not a valid phone number!'
 }
 var newVoteSchema = mongoose.Schema({
     memerName:{type:String,required:true,validate:custom},

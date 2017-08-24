@@ -15,6 +15,7 @@ class newvote{
             if(err)
                 console.log(err);
             //   res.status(400).json({ error: 'message' });
+            else
             console.log("savend")
             
         });
@@ -40,29 +41,29 @@ class newvote{
         
         //update query
 
-        // var condition = {memerName:'fds'};
-        // var update = {impediment:'none'}
+        var condition = {memerName:'fds'};
+        var update = {impediment:'none'}
 
-        // newVote.update(condition,update,function(err,data){
-        //     // console.log(data);
-        // })
-        // newVote.find({memerName:'dfsf'})
-        // .then((res)=>{
-        //    return newVote.findByIdAndUpdate(res[0].id,update)})
-        // .then((response)=>{
-        //    var promisDemo = new Promise(
-        //       (resolve,reject)=>{
-        //            resolve({response});
-        //        }
-        //    ) 
-        //     return promisDemo
+        newVote.update(condition,update,function(err,data){
+            // console.log(data);
+        })
+        newVote.find({memerName:'dfsf'})
+        .then((res)=>{
+           return newVote.findByIdAndUpdate(res[0].id,update)})
+        .then((response)=>{
+           var promisDemo = new Promise(
+              (resolve,reject)=>{
+                   resolve({response});
+               }
+           ) 
+            return promisDemo
            
-        // })
-        // .then((resp)=>{return Promise.resolve("resolved")})
-        // .then((res)=>{console.log(res)})
-        // .catch(err=>{
-        //     console.log(err);
-        // })
+        })
+        .then((resp)=>{return Promise.resolve("resolved")})
+        .then((res)=>{console.log(res)})
+        .catch(err=>{
+            console.log(err);
+        })
              
 
 
