@@ -6,6 +6,7 @@ var contactSchema = mongoose.Schema({
    contactslist:[
        {name:{type:String,required:true},
        number:{type:String,required:true},
+       username:{type:String,required:true},
     }
 
    ]

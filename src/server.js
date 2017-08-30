@@ -4,10 +4,18 @@ var bodyParser      = require('body-parser');
 var morgan          = require('morgan');  
 var app             = express();
 var router          = express.Router(); 
-var port            = process.env.PORT || 3000;
+var port            = process.env.PORT || 9000;
 var mongoose        = require('mongoose');
 var cors            = require('cors');
 var cluster         = require('cluster');
+var server          = require('http').Server(app);
+
+
+
+require('./socket.js')(server);
+
+
+
 
 app.use(cors())
 const numCPUs = require('os').cpus().length;
@@ -39,9 +47,12 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 app.get('/',function(req,res){
     console.log("url");
-    res.json('urin');
+    res.sendfile('./views/index.html');
 })
 
 module.exports = app;
 require('./route.js')(app);
-app.listen(port);
+server.listen(port, function(){
+  console.log('listening on *'+port);
+});
+

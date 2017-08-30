@@ -1,19 +1,12 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+var Shema = mongoose.Schema;
 
-
-var loginSchema = mongoose.Schema({
-    username:{
-        type:String,
-        required:true,
-        unique : true
-    },
-    password:{
-        type:String,
-        required:true,
-        unique:true
-    }
+var profileShema = mongoose.Schema({
+    username:{type:String,required:true,index: {unique: true, dropDups: true}},
+    number:Number,
+    name:String,
+    password:String,
 },{collection:'profile'})  
 
-var Login = module.exports = mongoose.model('profile',loginSchema);
-// mongoose.model takes first argument as collection name but it pluralize it so the profile becomes profiles 
-// so collection is used 
+
+module.exports = mongoose.model('profile',profileShema);

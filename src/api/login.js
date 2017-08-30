@@ -7,14 +7,18 @@ class login{
                 {console.log(err)}
             else{
                 if(data == null){
+                    
                     res.status(404).send(data);
                 }
                 else {
+                     
+                    
                     res.status(200).send(data)
                 }
             }
         }
     )
+    
 }
 }
 // sorted in assending order 
