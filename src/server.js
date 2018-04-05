@@ -21,15 +21,15 @@ app.use(cors())
 const numCPUs = require('os').cpus().length;
 console.log(numCPUs);
 app.use(express.static('public'));
-var db ='mongodb://demo:demo@ec2-52-207-64-40.compute-1.amazonaws.com:27017/dummyDB' 
+var db ='mongodb://admin2:admin1234@ds235169.mlab.com:35169/chat' 
 mongoose.connect(db,function(err){
-  if(err){
-    console.log(err);
+  if(err){                        
+    console.log(err);                                                                 
   }
   else{
     console.log("coonected to db");
-  }
-})
+  }                                                                                                                                                                                                                             
+})                                                                                                                                                                                                        
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
